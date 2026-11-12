@@ -49,7 +49,11 @@ async function handleForm(path, request, env) {
   const ip = request.headers.get('CF-Connecting-IP');
   if (ip) verify.append('remoteip', ip);
   const outcome = await (await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: verify })).json();
-  if (!outcome.success) return json({ ok: false, error: 'The spam check failed. Please refresh the page and try again.' }, 403);
+  if (!outcome.success) {
+    const codes = (outcome['error-codes'] || []).join(', ') || 'unknown';
+    console.error('turnstile failed', codes, outcome.hostname || '');
+    return json({ ok: false, error: `The spam check failed (${codes}). Please refresh the page and try again.` }, 403);
+  }
 
   const name = str(form, 'name', 120);
   const email = str(form, 'email', 200);
