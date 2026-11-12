@@ -1,0 +1,18 @@
+{
+  // amitsonawane.com — static site + form endpoints
+  "name": "amitsonawane-site",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "send_email": [{ "name": "EMAIL" }],
+  "vars": {
+    "TO_ADDRESS": "amitvsonawane@gmail.com",
+    "FROM_ADDRESS": "forms@amitsonawane.com"
+  },
+  // TURNSTILE_SECRET is a secret set in the Cloudflare dashboard, never in this file.
+  "observability": { "enabled": true }
+}

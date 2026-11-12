@@ -1,0 +1,52 @@
+    <section data-page="book" hidden>
+      <div style="max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 28px">
+        <header style="display: flex; flex-direction: column; gap: 10px">
+          <a href="#home" data-go="home" class="back">&larr; Back</a>
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Free 30-minute growth audit</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945">Suggest a few times that work for you and tell me what to look at. I'll reply with a calendar invite for one of them.</p>
+        </header>
+        <form class="form" data-endpoint="/api/book" novalidate>
+          <div class="row2">
+            <div class="field"><label for="b-name">Your name</label><input id="b-name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+            <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+          </div>
+          <div class="field"><label for="b-company">Company or website <span class="opt">optional</span></label><input id="b-company" name="company" type="text" autocomplete="organization" maxlength="200"></div>
+          <div class="field"><label for="b-topic">What should we look at?</label><textarea id="b-topic" name="topic" rows="4" required maxlength="4000" placeholder="Your funnel, a channel that stalled, an ad account, a launch plan..."></textarea></div>
+          <fieldset class="slots">
+            <legend>Times that work for you</legend>
+            <p class="hint">Give one to three options. Times are in <strong class="tzlabel">your time zone</strong>.</p>
+            <div class="slot"><span class="slotn">1</span><div class="field"><label for="b-d1">Date</label><input id="b-d1" name="date1" type="date" required></div><div class="field"><label for="b-t1">Start time</label><input id="b-t1" name="time1" type="time" step="900" required></div></div>
+            <div class="slot"><span class="slotn">2</span><div class="field"><label for="b-d2">Date <span class="opt">optional</span></label><input id="b-d2" name="date2" type="date"></div><div class="field"><label for="b-t2">Start time</label><input id="b-t2" name="time2" type="time" step="900"></div></div>
+            <div class="slot"><span class="slotn">3</span><div class="field"><label for="b-d3">Date <span class="opt">optional</span></label><input id="b-d3" name="date3" type="date"></div><div class="field"><label for="b-t3">Start time</label><input id="b-t3" name="time3" type="time" step="900"></div></div>
+            <input type="hidden" name="tz" class="tzfield">
+          </fieldset>
+          <div class="hp" aria-hidden="true"><label for="b-site">Leave this empty</label><input id="b-site" name="website_url" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="cf-turnstile" data-sitekey="__SITEKEY__"></div>
+          <p class="status" role="status" aria-live="polite"></p>
+          <button type="submit" class="submit">Send my times</button>
+        </form>
+      </div>
+    </section>
+
+    <section data-page="send" hidden>
+      <div style="max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 28px">
+        <header style="display: flex; flex-direction: column; gap: 10px">
+          <a href="#home" data-go="home" class="back">&larr; Back</a>
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Send me the problem</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945">No call needed. Describe what's going on, attach anything useful, and I'll reply with a written or recorded teardown.</p>
+        </header>
+        <form class="form" data-endpoint="/api/send" enctype="multipart/form-data" novalidate>
+          <div class="row2">
+            <div class="field"><label for="s-name">Your name</label><input id="s-name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+            <div class="field"><label for="s-email">Email</label><input id="s-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+          </div>
+          <div class="field"><label for="s-company">Company or website <span class="opt">optional</span></label><input id="s-company" name="company" type="text" autocomplete="organization" maxlength="200"></div>
+          <div class="field"><label for="s-problem">The problem</label><textarea id="s-problem" name="problem" rows="7" required maxlength="10000" placeholder="What you're trying to grow, what you've tried, the numbers you have, and where it's stuck."></textarea></div>
+          <div class="field"><label for="s-files">Files <span class="opt">optional, up to 10 files and 18 MB in total</span></label><input id="s-files" name="files" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.gif,.webp,.csv,.xlsx,.xls,.docx,.doc,.pptx,.txt,.md,.zip"><p class="hint filesum"></p></div>
+          <div class="hp" aria-hidden="true"><label for="s-site">Leave this empty</label><input id="s-site" name="website_url" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="cf-turnstile" data-sitekey="__SITEKEY__"></div>
+          <p class="status" role="status" aria-live="polite"></p>
+          <button type="submit" class="submit">Send it over</button>
+        </form>
+      </div>
+    </section>

@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amit Sonawane · Growth</title>
+<meta name="description" content="Amit Sonawane grows companies. Aerospace engineer by training, marketer by trade, and still writing the code when a marketing problem needs it.">
+<meta property="og:title" content="Amit Sonawane · Growth">
+<meta property="og:description" content="Ten years growing companies like Hyperbiotics, Skylight and Feedzai. Free growth workflows, case notes and a free 30-minute audit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amitsonawane.com/">
+<meta name="theme-color" content="#F7F7F5">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#37352F}a:hover{color:#000000}
+.nv:hover{background:#EBEBE8 !important}
+.tile:hover{background:#F7F7F5 !important}
+.logo{opacity:.72;transition:opacity .2s}.tile:hover .logo{opacity:1}
+button{font-family:inherit}
+.draw{animation:reveal 2.2s cubic-bezier(.3,.1,.2,1) both}
+@keyframes reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.ms{animation:pop .5s ease-out both}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.m1{animation-delay:.3s}.m2{animation-delay:.6s}.m3{animation-delay:.9s}.m4{animation-delay:1.2s}.m5{animation-delay:1.5s}.m6{animation-delay:1.8s}.m7{animation-delay:2.1s}
+@media (max-width:760px){.msd{display:none}}
+@media (prefers-reduced-motion:reduce){.draw,.ms{animation:none}}
+</style>
+
+<style>
+html{scroll-behavior:smooth}
+section[data-page][hidden]{display:none}
+button.nv{background:transparent}
+@media (max-width:700px){
+  nav[aria-label="Site"]{flex:1 1 100% !important;flex-direction:row !important;align-items:center;gap:6px !important;padding:8px 10px !important;border-right:0 !important;border-bottom:1px solid #E9E9E7;overflow-x:auto;position:sticky;top:0;z-index:5}
+  nav[aria-label="Site"] > div:first-child{flex:0 0 auto;padding:4px !important}
+  nav[aria-label="Site"] > div:first-child > div:last-child{display:none}
+  nav[aria-label="Site"] > div:nth-child(2){flex-direction:row !important;gap:2px !important}
+  nav[aria-label="Site"] > div:nth-child(2) > div:first-child{display:none}
+  button.nv{white-space:nowrap;flex:0 0 auto}
+  button.nv svg{display:none}
+  .msl{width:24% !important}
+  .msl.m2,.msl.m4,.msl.m6{display:none !important}
+  .msl.m7{left:auto !important;right:10px;text-align:right;align-items:flex-end}
+  .bannerhead{font-size:20px !important}
+}
+button.nv[aria-current="page"]{background:#E8E8E5 !important}
+a.btn:hover{filter:brightness(.95)}
+.back{font-size:14px;color:#6F6E69;text-decoration:none;align-self:flex-start}
+.back:hover{color:#37352F}
+.form{display:flex;flex-direction:column;gap:18px}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label,.slots legend{font-size:14px;font-weight:500;color:#37352F}
+.opt{font-weight:400;color:#6F6E69;font-size:13px}
+.form input[type=text],.form input[type=email],.form input[type=date],.form input[type=time],.form textarea{box-sizing:border-box;width:100%;min-height:44px;padding:10px 12px;border:1px solid #D5D4D0;border-radius:6px;background:#FFFFFF;font:inherit;font-size:15px;color:#37352F}
+.form textarea{resize:vertical;line-height:1.5}
+.form input:focus,.form textarea:focus{outline:2px solid #0B6E99;outline-offset:1px;border-color:#0B6E99}
+.form input[type=file]{font:inherit;font-size:14px;padding:10px;border:1px dashed #C9C8C3;border-radius:6px;background:#F7F7F5}
+.form [aria-invalid="true"]{border-color:#B42318 !important}
+.slots{border:1px solid #E9E9E7;border-radius:8px;padding:16px 18px 18px;margin:0;display:flex;flex-direction:column;gap:12px}
+.slots legend{padding:0 6px}
+.hint{margin:0;font-size:13px;color:#6F6E69}
+.slot{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:end}
+.slotn{width:28px;height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;color:#6F6E69}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.status{margin:0;font-size:14px;min-height:1.4em}
+.status.err{color:#B42318}
+.status.ok{color:#1E6B3C}
+.submit{align-self:flex-start;min-height:46px;padding:0 20px;border:0;border-radius:6px;background:#0B6E99;color:#FFFFFF;font-size:15px;font-weight:600;cursor:pointer}
+.submit[disabled]{opacity:.6;cursor:progress}
+.done{border:1px solid #E9E9E7;border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.done h2{margin:0;font-size:20px}
+.done p{margin:0;color:#4A4945}
+@media (max-width:520px){.slot{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.slotn{display:none}}
+</style>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+
+<div style="min-height: 100vh; display: flex; flex-wrap: wrap; align-items: stretch; font-family: Inter, system-ui, sans-serif; color: #37352F; background: #FFFFFF; font-size: 16px; line-height: 1.55">
+
+  <nav aria-label="Site" style="flex: 1 1 240px; max-width: 100%; box-sizing: border-box; background: #F7F7F5; border-right: 1px solid #E9E9E7; padding: 14px 10px 24px; display: flex; flex-direction: column; gap: 18px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 6px 8px">
+      <div aria-hidden="true" style="width: 26px; height: 26px; border-radius: 5px; background: #37352F; color: #FFFFFF; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; letter-spacing: 0.02em">AS</div>
+      <div style="font-weight: 600; font-size: 14px">Amit Sonawane</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <div style="font-size: 12px; font-weight: 500; color: #6F6E69; padding: 4px 8px">Pages</div>
+      <button data-go="home" class="nv" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 8px;border:0;border-radius:5px;background:;color:#37352F;font-size:14px;font-weight:500;text-align:left;cursor:pointer">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6F6E69" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7" /><path d="M6 10v10h12V10" /></svg>
+        <span>Home</span>
+      </button>
+      <button data-go="work" class="nv" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 8px;border:0;border-radius:5px;background:;color:#37352F;font-size:14px;font-weight:500;text-align:left;cursor:pointer">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6F6E69" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 15l4-5 3 3 5-7" /></svg>
+        <span>Work and results</span>
+      </button>
+      <button data-go="builds" class="nv" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 8px;border:0;border-radius:5px;background:;color:#37352F;font-size:14px;font-weight:500;text-align:left;cursor:pointer">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6F6E69" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5" /><path d="M16 7l5 5-5 5" /><path d="M13.5 5l-3 14" /></svg>
+        <span>Things I build</span>
+      </button>
+      <button data-go="flows" class="nv" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 8px;border:0;border-radius:5px;background:;color:#37352F;font-size:14px;font-weight:500;text-align:left;cursor:pointer">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6F6E69" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg>
+        <span>Steal my workflows</span>
+      </button>
+      <button data-go="about" class="nv" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 8px;border:0;border-radius:5px;background:;color:#37352F;font-size:14px;font-weight:500;text-align:left;cursor:pointer">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6F6E69" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c2-9 7-14 16-16-2 9-7 14-16 16z" /><path d="M9 15l-3-1" /><path d="M10 18l-1-3" /></svg>
+        <span>Trajectory</span>
+      </button>
+      <button data-go="contact" class="nv" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 8px;border:0;border-radius:5px;background:;color:#37352F;font-size:14px;font-weight:500;text-align:left;cursor:pointer">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6F6E69" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+        <span>Contact</span>
+      </button>
+    </div>
+
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 20px; border-bottom: 1px solid #F1F1EF">
+      <div style="font-size: 14px; color: #6F6E69">amitsonawane.com <span aria-hidden="true">/</span> <span style="color: #37352F">Home</span></div>
+      <button data-go="contact" style="min-height: 40px; padding: 0 16px; border: 0; border-radius: 6px; background: #0B6E99; color: #FFFFFF; font-size: 14px; font-weight: 600; cursor: pointer">Work with me</button>
+    </div>
+
+    <section data-page="home">
+      <div>
+        <div style="position: relative; height: 320px; background: #191919; overflow: hidden">
+          <svg aria-hidden="true" viewBox="0 0 1000 320" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%">
+            <g stroke="#2B2B2B" stroke-width="1" vector-effect="non-scaling-stroke">
+              <path vector-effect="non-scaling-stroke" d="M0 40h1000M0 80h1000M0 120h1000M0 160h1000M0 200h1000M0 240h1000M0 280h1000" />
+              <path vector-effect="non-scaling-stroke" d="M100 0v320M200 0v320M300 0v320M400 0v320M500 0v320M600 0v320M700 0v320M800 0v320M900 0v320" />
+            </g>
+            <g class="draw">
+              <path d="M0 204 C 20 203, 40 200, 60 198 S 160 192, 200 188 S 290 180, 330 172 S 420 160, 460 148 S 550 130, 590 116 S 680 96, 720 82 S 810 60, 850 46 S 960 18, 1000 8 L1000 320 L0 320 Z" fill="#FFB454" fill-opacity="0.08" />
+              <path vector-effect="non-scaling-stroke" d="M0 204 C 20 203, 40 200, 60 198 S 160 192, 200 188 S 290 180, 330 172 S 420 160, 460 148 S 550 130, 590 116 S 680 96, 720 82 S 810 60, 850 46 S 960 18, 1000 8" fill="none" stroke="#FFB454" stroke-width="3" />
+            </g>
+          </svg>
+          <div style="position: absolute; left: 24px; top: 22px; max-width: 46%; display: flex; flex-direction: column; gap: 6px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #B8B7B2">CAREER TRAJECTORY, 2011 TO NOW</div>
+            <div class="bannerhead" style="font-size: 28px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF">From flight paths to growth curves.</div>
+          </div>
+          <div class="ms m1" aria-hidden="true" style="position: absolute; left: calc(6% - 6px); top: 192px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; background: #191919; border: 3px solid #FFB454"></div>
+          <div class="ms m1 msl" style="position: absolute; left: calc(6% + 8px); top: 210px; width: 12%; display: flex; flex-direction: column; gap: 1px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #B8B7B2">2011</div>
+            <div style="font-size: 13px; font-weight: 600; color: #FFFFFF; line-height: 1.25">JetBlue</div>
+            <div class="msd" style="font-size: 12px; color: #FFB454; line-height: 1.3">4 NTSB investigations</div>
+          </div>
+          <div class="ms m2" aria-hidden="true" style="position: absolute; left: calc(20% - 6px); top: 182px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; background: #191919; border: 3px solid #FFB454"></div>
+          <div class="ms m2 msl" style="position: absolute; left: calc(20% + 8px); top: 200px; width: 12%; display: flex; flex-direction: column; gap: 1px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #B8B7B2">2013</div>
+            <div style="font-size: 13px; font-weight: 600; color: #FFFFFF; line-height: 1.25">TaxJar</div>
+            <div class="msd" style="font-size: 12px; color: #FFB454; line-height: 1.3">100K to 2M visitors</div>
+          </div>
+          <div class="ms m3" aria-hidden="true" style="position: absolute; left: calc(33% - 6px); top: 166px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; background: #191919; border: 3px solid #FFB454"></div>
+          <div class="ms m3 msl" style="position: absolute; left: calc(33% + 8px); top: 184px; width: 12%; display: flex; flex-direction: column; gap: 1px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #B8B7B2">2014</div>
+            <div style="font-size: 13px; font-weight: 600; color: #FFFFFF; line-height: 1.25">Feedzai</div>
+            <div class="msd" style="font-size: 12px; color: #FFB454; line-height: 1.3">Close rate 3% to 6.5%</div>
+          </div>
+          <div class="ms m4" aria-hidden="true" style="position: absolute; left: calc(46% - 6px); top: 142px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; background: #191919; border: 3px solid #FFB454"></div>
+          <div class="ms m4 msl" style="position: absolute; left: calc(46% + 8px); top: 160px; width: 12%; display: flex; flex-direction: column; gap: 1px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #B8B7B2">2016</div>
+            <div style="font-size: 13px; font-weight: 600; color: #FFFFFF; line-height: 1.25">Hyperbiotics</div>
+            <div class="msd" style="font-size: 12px; color: #FFB454; line-height: 1.3">$25M to $150M</div>
+          </div>
+          <div class="ms m5" aria-hidden="true" style="position: absolute; left: calc(59% - 6px); top: 110px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; background: #191919; border: 3px solid #FFB454"></div>
+          <div class="ms m5 msl" style="position: absolute; left: calc(59% + 8px); top: 128px; width: 12%; display: flex; flex-direction: column; gap: 1px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #B8B7B2">2020</div>
+            <div style="font-size: 13px; font-weight: 600; color: #FFFFFF; line-height: 1.25">The Jumbo Shop</div>
+            <div class="msd" style="font-size: 12px; color: #FFB454; line-height: 1.3">$5.2M to $35M ARR</div>
+          </div>
+          <div class="ms m6" aria-hidden="true" style="position: absolute; left: calc(72% - 6px); top: 76px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; background: #191919; border: 3px solid #FFB454"></div>
+          <div class="ms m6 msl" style="position: absolute; left: calc(72% + 8px); top: 94px; width: 12%; display: flex; flex-direction: column; gap: 1px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #B8B7B2">2023</div>
+            <div style="font-size: 13px; font-weight: 600; color: #FFFFFF; line-height: 1.25">Skylight</div>
+            <div class="msd" style="font-size: 12px; color: #FFB454; line-height: 1.3">6+ new markets</div>
+          </div>
+          <div class="ms m7" aria-hidden="true" style="position: absolute; left: calc(85% - 6px); top: 40px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; background: #191919; border: 3px solid #FFB454"></div>
+          <div class="ms m7 msl" style="position: absolute; left: calc(85% + 8px); top: 58px; width: 12%; display: flex; flex-direction: column; gap: 1px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #B8B7B2">2025</div>
+            <div style="font-size: 13px; font-weight: 600; color: #FFFFFF; line-height: 1.25">Checkbook.io</div>
+            <div class="msd" style="font-size: 12px; color: #FFB454; line-height: 1.3">Marketing built from zero</div>
+          </div>
+        </div>
+
+        <div style="max-width: 920px; margin: 0 auto; padding: 36px 24px 96px; display: flex; flex-direction: column; gap: 48px">
+
+          <header style="display: flex; flex-direction: column; gap: 18px">
+            <h1 style="margin: 0; font-size: 42px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Amit Sonawane</h1>
+            <p style="margin: 0; font-size: 21px; line-height: 1.45; color: #37352F; max-width: 720px">I grow companies. Aerospace engineer by training, marketer by trade, and I still write the code when a marketing problem needs it.</p>
+            <dl style="margin: 0; display: grid; grid-template-columns: minmax(96px, 150px) minmax(0, 1fr); row-gap: 8px; column-gap: 16px; font-size: 14px">
+              <dt style="color: #6F6E69">Sectors</dt>
+              <dd style="margin: 0; display: flex; flex-wrap: wrap; gap: 6px">
+                <span style="background: #E7F0F5; color: #1F4E63; border-radius: 4px; padding: 1px 8px">B2B SaaS</span>
+                <span style="background: #F1ECE4; color: #5C4520; border-radius: 4px; padding: 1px 8px">Fintech</span>
+                <span style="background: #EEEAF4; color: #4A3470; border-radius: 4px; padding: 1px 8px">DTC and e-commerce</span>
+              </dd>
+              <dt style="color: #6F6E69">Languages</dt>
+              <dd style="margin: 0">English, Spanish, Portuguese, Hindi</dd>
+              <dt style="color: #6F6E69">Lived in</dt>
+              <dd style="margin: 0">India, Malaysia, UK, US, Chile, Portugal</dd>
+              <dt style="color: #6F6E69">Based</dt>
+              <dd style="margin: 0">Miami, USA</dd>
+            </dl>
+          </header>
+
+          <section aria-label="Results" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px">
+              <h2 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Ten years of growth, in four numbers</h2>
+              <button data-action="replay" style="min-height: 40px; padding: 0 10px; border: 1px solid #E9E9E7; border-radius: 6px; background: #FFFFFF; color: #6F6E69; font-size: 13px; cursor: pointer">Replay</button>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+              
+                <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px">
+                  <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">from $25M</div>
+                  <div data-stat="0" style="font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">$150M</div>
+                  <div aria-hidden="true" style="height: 4px; border-radius: 2px; background: #F1F1EF; overflow: hidden">
+                    <div data-bar="0" style="height: 4px; border-radius: 2px; width: 100.0%; background: #0B6E99"></div>
+                  </div>
+                  <div style="font-size: 14px; font-weight: 600">Hyperbiotics total revenue</div>
+                  <div style="font-size: 13px; color: #6F6E69">Amazon, DTC and retail, 2016 to 2019</div>
+                </div>
+              
+                <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px">
+                  <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">from $500K</div>
+                  <div data-stat="1" style="font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">$4M</div>
+                  <div aria-hidden="true" style="height: 4px; border-radius: 2px; background: #F1F1EF; overflow: hidden">
+                    <div data-bar="1" style="height: 4px; border-radius: 2px; width: 100.0%; background: #0B6E99"></div>
+                  </div>
+                  <div style="font-size: 14px; font-weight: 600">Median ARR in 8 months</div>
+                  <div style="font-size: 13px; color: #6F6E69">SEO, content and funnel optimization</div>
+                </div>
+              
+                <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px">
+                  <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">from $5.2M</div>
+                  <div data-stat="2" style="font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">$35M</div>
+                  <div aria-hidden="true" style="height: 4px; border-radius: 2px; background: #F1F1EF; overflow: hidden">
+                    <div data-bar="2" style="height: 4px; border-radius: 2px; width: 100.0%; background: #0B6E99"></div>
+                  </div>
+                  <div style="font-size: 14px; font-weight: 600">The Jumbo Shop portfolio ARR</div>
+                  <div style="font-size: 13px; color: #6F6E69">12-person team, $7M+ annual ad budget</div>
+                </div>
+              
+                <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px">
+                  <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">from 100K</div>
+                  <div data-stat="3" style="font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">2M</div>
+                  <div aria-hidden="true" style="height: 4px; border-radius: 2px; background: #F1F1EF; overflow: hidden">
+                    <div data-bar="3" style="height: 4px; border-radius: 2px; width: 100.0%; background: #0B6E99"></div>
+                  </div>
+                  <div style="font-size: 14px; font-weight: 600">TaxJar monthly organic visitors</div>
+                  <div style="font-size: 13px; color: #6F6E69">SEO and link building</div>
+                </div>
+              
+            </div>
+          </section>
+
+          <section aria-label="Companies" style="display: flex; flex-direction: column; gap: 16px">
+            <h2 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Companies I have worked with</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/dropbox.png" alt="Dropbox" style="display: block; width: 103px; height: 20px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/target.png" alt="Target" style="display: block; width: 44px; height: 44px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/capital-one.png" alt="Capital One" style="display: block; width: 77px; height: 27px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/citigroup.png" alt="Citi" style="display: block; width: 60px; height: 35px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/box.png" alt="Box" style="display: block; width: 63px; height: 33px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/toptal.png" alt="Toptal" style="display: block; width: 86px; height: 24px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/audi.png" alt="Audi Latin America" style="display: block; width: 77px; height: 27px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/ted.png" alt="TED" style="display: block; width: 77px; height: 27px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/skylight.png" alt="Skylight" style="display: block; width: 89px; height: 24px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/checkbook-io.png" alt="Checkbook.io" style="display: block; width: 108px; height: 19px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/hyperbiotics.png" alt="Hyperbiotics" style="display: block; width: 96px; height: 22px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/feedzai.png" alt="Feedzai" style="display: block; width: 85px; height: 25px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/taxjar.png" alt="TaxJar" style="display: block; width: 87px; height: 24px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/grammarly.png" alt="Grammarly" style="display: block; width: 98px; height: 21px; object-fit: contain">                </div>
+              
+                <div class="tile" style="height: 80px; border: 1px solid #E9E9E7; border-radius: 8px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0 8px; text-align: center">
+                  <img class="logo" src="/assets/logos/jetblue.png" alt="JetBlue" style="display: block; width: 80px; height: 26px; object-fit: contain">                </div>
+              
+            </div>
+          </section>
+
+          <section aria-label="How I work" style="display: flex; flex-direction: column; gap: 16px">
+            <h2 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">What you get</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+              <div style="background: #F7F7F5; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#37352F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c2-9 7-14 16-16-2 9-7 14-16 16z" /><circle cx="14" cy="10" r="1.6" /></svg>
+                <h3 style="margin: 0; font-size: 16px; font-weight: 600">An engineer's rigor</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945">Aerospace engineering degree, an MBA, and four NTSB investigations at JetBlue before I ever ran a campaign. I treat a funnel like a system: instrument it, find the failure, fix the cause.</p>
+              </div>
+              <div style="background: #F7F7F5; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#37352F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5" /><path d="M16 7l5 5-5 5" /><path d="M13.5 5l-3 14" /></svg>
+                <h3 style="margin: 0; font-size: 16px; font-weight: 600">Hands on the keyboard</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945">When the tool I need does not exist, I build it. I ship my own apps and code the fixes for my own marketing problems instead of waiting on a roadmap.</p>
+              </div>
+              <div style="background: #F7F7F5; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#37352F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" /><circle cx="17" cy="9" r="2.4" /><path d="M16 14.2c2.8.3 5 2.7 5 5.8" /></svg>
+                <h3 style="margin: 0; font-size: 16px; font-weight: 600">People first</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945">Built and led a 12-person marketing team, ran agencies across six markets, and worked alongside product, UX and sales. Growth only compounds when the team does.</p>
+              </div>
+            </div>
+          </section>
+
+          <section aria-label="Next step" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <h2 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Have a growth problem worth solving?</h2>
+              <p style="margin: 0; font-size: 15px; color: #4A4945">Two ways to start, both free. Pick whichever suits how you work.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px">
+              <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#37352F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18" /><path d="M8 3v4" /><path d="M16 3v4" /></svg>
+                <h3 style="margin: 0; font-size: 17px; font-weight: 600">Free 30-minute growth audit</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">A live call. Bring your funnel, your numbers or your ad account, and leave with the two or three things I would fix first.</p>
+                <a class="btn" href="#book" data-go="book" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; text-decoration: none; border: 0; border-radius: 6px; background: #0B6E99; color: #FFFFFF; font-size: 15px; font-weight: 600; cursor: pointer">Request a time</a>
+              </div>
+              <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#37352F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9h8" /><path d="M8 12h5" /></svg>
+                <h3 style="margin: 0; font-size: 17px; font-weight: 600">Async collab</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">No call needed. Send me the problem and the context, and I reply with a written or recorded teardown.</p>
+                <button data-go="send" style="align-self: flex-start; min-height: 44px; padding: 0 16px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 15px; font-weight: 500; cursor: pointer">Send me the problem</button>
+                <div style="font-size: 12px; color: #6F6E69">Opens a short intake form</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section hidden data-page="work">
+      <div style="max-width: 980px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 32px">
+        <header style="display: flex; flex-direction: column; gap: 10px">
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Work and results</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945; max-width: 700px">From a first marketing hire building from zero to scaling a brand past $150M. Every role, with the number that mattered.</p>
+        </header>
+        <div style="border-top: 1px solid #E9E9E7">
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">Oct 2025 – Now</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">Independent</h2>
+                <div style="font-size: 14px; color: #6F6E69">Growth Marketing Consultant</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">Engagements with Dropbox, Target, Toptal, Capital One, Citigroup, Box and others. Grew Median from $500K to $4M ARR in 8 months.</p>
+            </article>
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">Jan – Oct 2025</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">Checkbook.io</h2>
+                <div style="font-size: 14px; color: #6F6E69">Head of Marketing</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">First marketer. Built the function and the B2B go-to-market from zero for CFO and CTO buyers in fintech and payments.</p>
+            </article>
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">2023 – 2025</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">Skylight</h2>
+                <div style="font-size: 14px; color: #6F6E69">Head of International Marketing</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">Took Frame and Calendar into Australia, Canada, the UK, EU and Singapore with localized paid, email and retail programs.</p>
+            </article>
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">2020 – Now</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">The Jumbo Shop</h2>
+                <div style="font-size: 14px; color: #6F6E69">Co-Founder and Head of Marketing, part-time</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">Combined ARR from $5.2M to $35M. Managed $7M+ in annual ad spend and built a 12-person team.</p>
+            </article>
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">2016 – 2019</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">Hyperbiotics</h2>
+                <div style="font-size: 14px; color: #6F6E69">Marketing Director</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">Revenue from $25M to $150M. The #1-selling probiotic on Amazon four years running. Launched into Target stores.</p>
+            </article>
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">2014 – 2016</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">Feedzai</h2>
+                <div style="font-size: 14px; color: #6F6E69">Senior Marketing Manager</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">Close rate from 3% to 6.5%. LinkedIn ads to $10K a month, profitably, within 3 months. Led the rebrand.</p>
+            </article>
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">2013 – 2014</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">TaxJar (acquired by Stripe)</h2>
+                <div style="font-size: 14px; color: #6F6E69">Email and SEO Manager</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">Organic traffic from 100K to 2M monthly visitors. Email revenue doubled to $100K a month in 6 months.</p>
+            </article>
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">2013 – 2014</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">Grammarly</h2>
+                <div style="font-size: 14px; color: #6F6E69">SEO Manager</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">White-hat link acquisition programs across the UK, Australia, Germany and Canada.</p>
+            </article>
+          
+            <article style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 4px; border-bottom: 1px solid #E9E9E7">
+              <div style="flex: 0 0 150px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 3px">2011 – 2013</div>
+              <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px">
+                <h2 style="margin: 0; font-size: 16px; font-weight: 600">JetBlue Airlines</h2>
+                <div style="font-size: 14px; color: #6F6E69">Engineering Intern</div>
+              </div>
+              <p style="flex: 2 1 340px; margin: 0; font-size: 15px; color: #37352F">Route optimization and structural engineering. Contributed to 4 NTSB investigations.</p>
+            </article>
+          
+        </div>
+      </div>
+    </section>
+
+    <section hidden data-page="builds">
+      <div style="max-width: 920px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 32px">
+        <header style="display: flex; flex-direction: column; gap: 10px">
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Things I build</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945; max-width: 700px">I am a maker by nature. At work that means I open an editor instead of writing a ticket. Off the clock it means apps built for fun, sourdough, hand-carved spoons and teaching what I have learned.</p>
+        </header>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px">
+          <article style="border: 1px solid #E9E9E7; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
+            <div aria-hidden="true" style="height: 190px; background: #14182B; border-bottom: 1px solid #E9E9E7; display: flex; align-items: center; gap: 20px; padding: 0 22px; overflow: hidden">
+              <div style="flex: 1 1 55%; min-width: 0; display: flex; flex-direction: column; gap: 7px">
+                <div style="display: flex; align-items: center; gap: 8px; background: #1F2542; border-radius: 6px; padding: 8px 10px"><div style="width: 16px; height: 16px; border-radius: 4px; background: #7C8CFF"></div><div style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 4px"><div style="height: 5px; width: 80%; border-radius: 3px; background: #C9CFF5"></div><div style="height: 4px; width: 55%; border-radius: 2px; background: #4B5488"></div></div><div style="width: 30px; height: 12px; border-radius: 6px; background: #7C8CFF"></div></div>
+                <div style="display: flex; align-items: center; gap: 8px; background: #1F2542; border-radius: 6px; padding: 8px 10px"><div style="width: 16px; height: 16px; border-radius: 4px; background: #3A4270"></div><div style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 4px"><div style="height: 5px; width: 65%; border-radius: 3px; background: #C9CFF5"></div><div style="height: 4px; width: 40%; border-radius: 2px; background: #4B5488"></div></div><div style="width: 30px; height: 12px; border-radius: 6px; background: #2B3260"></div></div>
+                <div style="display: flex; align-items: center; gap: 8px; background: #1F2542; border-radius: 6px; padding: 8px 10px"><div style="width: 16px; height: 16px; border-radius: 4px; background: #3A4270"></div><div style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 4px"><div style="height: 5px; width: 72%; border-radius: 3px; background: #C9CFF5"></div><div style="height: 4px; width: 47%; border-radius: 2px; background: #4B5488"></div></div><div style="width: 30px; height: 12px; border-radius: 6px; background: #2B3260"></div></div>
+              </div>
+              <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 2px">
+                <div style="font-size: 44px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; color: #FFFFFF">80K</div>
+                <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #C9CFF5">monthly users</div>
+                <svg width="96" height="34" viewBox="0 0 96 34" fill="none" style="margin-top: 6px"><path d="M2 31 C 24 30, 38 26, 52 18 S 80 6, 94 3" stroke="#7C8CFF" stroke-width="2.5" stroke-linecap="round" /><circle cx="94" cy="3" r="3" fill="#7C8CFF" /></svg>
+              </div>
+            </div>
+            <div style="padding: 18px; display: flex; flex-direction: column; gap: 8px">
+              <h2 style="margin: 0; font-size: 18px; font-weight: 600">ETHJobs.com</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945">An Ethereum developer job board that I grew to 80K monthly users. It was later acquired.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px">Job board</span><span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px">Ethereum</span><span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px">Acquired</span>
+              </div>
+            </div>
+          </article>
+          <article style="border: 1px solid #E9E9E7; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
+            <div aria-hidden="true" style="height: 190px; background: #EFE6D6; border-bottom: 1px solid #E9E9E7; overflow: hidden">
+              <svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" style="display: block; width: 100%; height: 100%">
+                <rect x="0" y="158" width="400" height="32" fill="#E2D6C1" />
+                <g>
+                  <rect x="46" y="38" width="86" height="108" fill="#FFFFFF" stroke="#2B2A27" stroke-width="3" />
+                  <rect x="58" y="50" width="62" height="84" fill="#1F4E63" />
+                  <circle cx="89" cy="82" r="20" fill="#F2B84B" />
+                  <path d="M58 134 L58 112 Q 89 92 120 114 L120 134 Z" fill="#C8553D" />
+                </g>
+                <g>
+                  <rect x="152" y="22" width="112" height="132" fill="#FFFFFF" stroke="#2B2A27" stroke-width="3" />
+                  <rect x="166" y="36" width="84" height="104" fill="#F6EFE3" />
+                  <circle cx="208" cy="88" r="34" fill="none" stroke="#C8553D" stroke-width="10" />
+                  <circle cx="208" cy="88" r="12" fill="#1F4E63" />
+                </g>
+                <g>
+                  <rect x="284" y="46" width="78" height="96" fill="#FFFFFF" stroke="#2B2A27" stroke-width="3" />
+                  <rect x="295" y="57" width="56" height="74" fill="#F2B84B" />
+                  <rect x="295" y="57" width="28" height="37" fill="#2B2A27" />
+                  <rect x="323" y="94" width="28" height="37" fill="#1F4E63" />
+                </g>
+              </svg>
+            </div>
+            <div style="padding: 18px; display: flex; flex-direction: column; gap: 8px">
+              <h2 style="margin: 0; font-size: 18px; font-weight: 600">Art Circle</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945">A subscription art service and Startup-Chile project from 2013. It grew to 600 subscribers and artists, and was later acquired by GAM, Chile.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px">Subscription</span><span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px">Startup-Chile 2013</span><span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px">Acquired by GAM</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <section aria-label="Off the clock" style="display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Off the clock, still making</h2>
+          <p style="margin: 0; font-size: 15px; color: #4A4945; max-width: 700px">My free time goes to learning new skills. The medium changes. The habit of making something with my own hands does not.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+            <article style="border: 1px solid #E9E9E7; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
+              <div style="height: 180px; background: #F7F7F5; border-bottom: 1px solid #E9E9E7; display: flex; align-items: flex-start; justify-content: center; overflow: hidden; padding-top: 14px; box-sizing: border-box"><img src="/assets/squiggle.webp" alt="Squiggle Tunes app screen showing a hand-drawn cup that plays as music" style="display: block; width: 150px; border-radius: 14px 14px 0 0; border: 1px solid #E9E9E7; border-bottom: 0"></div>
+              <div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
+                <h3 style="margin: 0; font-size: 16px; font-weight: 600">Apps, for fun</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945">I made Squiggle Tunes for my daughter, just for fun. She draws a picture and hears it play as music.</p>
+              </div>
+            </article>
+            <article style="border: 1px solid #E9E9E7; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
+              <img src="/assets/sourdough.jpg" alt="Two sourdough loaves cooling on a wire rack" style="display: block; width: 100%; height: 180px; object-fit: cover; object-position: center; border-bottom: 1px solid #E9E9E7">
+              <div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
+                <h3 style="margin: 0; font-size: 16px; font-weight: 600">Sourdough</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945">Flour, water, salt and patience. A slow feedback loop that taught me a lot about iteration.</p>
+              </div>
+            </article>
+            <article style="border: 1px solid #E9E9E7; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
+              <img src="/assets/spoon.jpg" alt="A freshly carved wooden spoon resting on a lap covered in wood shavings" style="display: block; width: 100%; height: 180px; object-fit: cover; object-position: left center; border-bottom: 1px solid #E9E9E7">
+              <div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
+                <h3 style="margin: 0; font-size: 16px; font-weight: 600">Hand-carved spoons</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945">A block of wood, a knife and a few quiet hours. No dashboard required.</p>
+              </div>
+            </article>
+            <article style="border: 1px solid #E9E9E7; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
+              <img src="/assets/meetup.jpg" alt="Amit at dinner with fellow marketers and entrepreneurs after a meetup" style="display: block; width: 100%; height: 180px; object-fit: cover; object-position: center 60%; border-bottom: 1px solid #E9E9E7">
+              <div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
+                <h3 style="margin: 0; font-size: 16px; font-weight: 600">Coaching fellow marketers and entrepreneurs</h3>
+                <p style="margin: 0; font-size: 14px; color: #4A4945">I coach fellow marketers and entrepreneurs at meetups and workshops across the US, Europe and Asia.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section hidden data-page="flows">
+      <div style="max-width: 920px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 32px">
+        <header style="display: flex; flex-direction: column; gap: 12px">
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Steal my workflows</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945; max-width: 720px">The playbooks I run on client work and my own products, written as skill files any AI agent can follow. Each one comes with copy-paste prompts, worked examples, a scoring rubric and helper scripts.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69">
+            <span>19 workflows</span><span>6 themes</span><span>Works with any capable agent</span><span>Free</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px">
+            <a class="btn" href="/workflows/growth-workflows.zip" download="" style="display: flex; align-items: center; gap: 8px; min-height: 44px; text-decoration: none; padding: 0 16px; border: 0; border-radius: 6px; background: #0B6E99; color: #FFFFFF; font-size: 15px; font-weight: 600; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download all 19</span></a>
+          </div>
+        </header>
+
+        <section aria-label="How to use" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border: 1px solid #E9E9E7; border-radius: 8px; overflow: hidden">
+          <div style="padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; border-right: 1px solid #E9E9E7">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">STEP 1</div>
+            <div style="font-size: 15px; font-weight: 600">Download a workflow</div>
+            <div style="font-size: 13px; color: #4A4945">Each folder holds the skill file, prompts, examples and scripts.</div>
+          </div>
+          <div style="padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; border-right: 1px solid #E9E9E7">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">STEP 2</div>
+            <div style="font-size: 15px; font-weight: 600">Give it to your agent</div>
+            <div style="font-size: 13px; color: #4A4945">Attach SKILL.md in any chat assistant, or drop the folder into your agent's skills directory.</div>
+          </div>
+          <div style="padding: 16px 18px; display: flex; flex-direction: column; gap: 4px">
+            <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">STEP 3</div>
+            <div style="font-size: 15px; font-weight: 600">Run prompt 1</div>
+            <div style="font-size: 13px; color: #4A4945">Fill in the placeholders. Specific beats broad.</div>
+          </div>
+        </section>
+
+        <div role="group" aria-label="Filter by theme" style="display: flex; flex-wrap: wrap; gap: 8px">
+          
+              <button data-filter="0" aria-pressed="true" style="min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #37352F; background: #37352F; color: #FFFFFF; font-size: 13px; font-weight: 500; cursor: pointer">All <span style="opacity: .7">19</span></button>
+          
+              <button data-filter="1" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #D5D4D0; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer">Search &amp; AI answers <span style="opacity: .7">5</span></button>
+          
+              <button data-filter="2" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #D5D4D0; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer">Human-sounding AI <span style="opacity: .7">3</span></button>
+          
+              <button data-filter="3" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #D5D4D0; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer">Validate first <span style="opacity: .7">3</span></button>
+          
+              <button data-filter="4" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #D5D4D0; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer">Find customers <span style="opacity: .7">3</span></button>
+          
+              <button data-filter="5" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #D5D4D0; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer">Content &amp; ads <span style="opacity: .7">3</span></button>
+          
+              <button data-filter="6" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #D5D4D0; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer">Experiments <span style="opacity: .7">2</span></button>
+          
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px">
+          
+            <article data-theme="1" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Search &amp; AI answers</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">01</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">AI-answer visibility</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Find out whether AI assistants mention you when buyers ask about your category, see which sources they cite instead, and fix the gaps on your site and around the web.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/ai-answer-visibility.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/ai-answer-visibility/SKILL.md" download="ai-answer-visibility-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="1" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Search &amp; AI answers</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">02</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Keyword and programmatic pages</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Pick a low-competition keyword with many long-tail variants, build the product or page set around it, and generate one genuinely useful page per entity from your own data.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/keyword-and-programmatic-pages.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/keyword-and-programmatic-pages/SKILL.md" download="keyword-and-programmatic-pages-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="1" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Search &amp; AI answers</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">03</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Competitor gap mining</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Work out what competitors do to grow from public files and public data: hidden landing pages, new pages in their sitemaps, long-running ads, pricing changes, and the keywords and pages you are missing.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/competitor-gap-mining.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/competitor-gap-mining/SKILL.md" download="competitor-gap-mining-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="1" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Search &amp; AI answers</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">04</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Ranking on community platforms and video review searches</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Show up where buyers research before they buy: community threads that already rank for 'best X', and video searches like 'X honest review' and 'X vs Y'. Done in the open, with real help and disclosed affiliation.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/community-and-video-search.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/community-and-video-search/SKILL.md" download="community-and-video-search-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="1" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Search &amp; AI answers</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">05</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Weekly SEO upkeep loop</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">A one-hour weekly routine on Search Console data: push pages sitting in positions 4 to 20, rewrite titles with low click-through, add internal links, and refresh facts on pages that already rank.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/weekly-seo-upkeep.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/weekly-seo-upkeep/SKILL.md" download="weekly-seo-upkeep-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="2" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Human-sounding AI</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">06</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Writing cleanup pass</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">A two-pass edit that strips the patterns that make AI-written text read as AI: inflated words, stock phrases, formula structures and even rhythm. Keeps every fact and the writer's tone.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/writing-cleanup-pass.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/writing-cleanup-pass/SKILL.md" download="writing-cleanup-pass-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="2" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Human-sounding AI</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">07</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Voice-matched drafting loop</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Turn a pile of your own past writing into a voice profile and a drafting loop that gets measurably closer to how you write, tracked by how much you edit each draft.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/voice-matched-drafting.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/voice-matched-drafting/SKILL.md" download="voice-matched-drafting-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="2" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Human-sounding AI</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">08</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Code and UI slop check</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">A review pass for AI-written app code and interface copy: catch type escapes, swallowed errors and leftover debug code, then cut UI text down with a deletion ladder and keep the design system consistent.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/code-ui-slop-check.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/code-ui-slop-check/SKILL.md" download="code-ui-slop-check-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="3" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Validate first</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">09</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Pain-point mining</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Find and rank the problems your target customers already complain about in public, with real quotes, before you build anything.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/pain-point-mining.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/pain-point-mining/SKILL.md" download="pain-point-mining-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="3" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Validate first</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">10</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Smoke test with a fake door and payment link</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Put a promise in front of real people before you build: a mockup, a one-page offer, daily short videos and a way to sign up or pay a deposit. Let the numbers pick the idea.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/smoke-test-fake-door.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/smoke-test-fake-door/SKILL.md" download="smoke-test-fake-door-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="3" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Validate first</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">11</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Simulated first users</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Before a launch, send 5 agent personas through your product in a real browser, from landing page to first success. Get one ranked list of where people get stuck, fix it, and rerun.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/simulated-first-users.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/simulated-first-users/SKILL.md" download="simulated-first-users-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="4" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Find customers</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">12</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Lead sourcing and enrichment</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Build a small, accurate list of the right companies and people from public sources, add a reason to contact each one, clean and score it, and hand it to outreach.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/lead-sourcing-enrichment.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/lead-sourcing-enrichment/SKILL.md" download="lead-sourcing-enrichment-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="4" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Find customers</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">13</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Cold outbound that stays out of spam</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Set up separate sending domains, authenticate and warm them, write short signal-based emails, send at low per-inbox caps, and run a weekly review on replies, bounces and complaints, inside the law.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/cold-outbound-at-volume.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/cold-outbound-at-volume/SKILL.md" download="cold-outbound-at-volume-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="4" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Find customers</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">14</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Community and competitor-switcher outreach</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Find people who say in public that they need what you offer, or that a competing tool lets them down, and reach them honestly: helpful public replies first, disclosed affiliation, and one-to-one messages only where the platform and the person allow it.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/community-competitor-outreach.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/community-competitor-outreach/SKILL.md" download="community-competitor-outreach-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="5" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Content &amp; ads</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">15</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Content repurposing engine</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Turn one strong idea or a few voice notes into a month of posts across formats, using patterns from your own best posts, with you approving everything before it goes out.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/content-repurposing-engine.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/content-repurposing-engine/SKILL.md" download="content-repurposing-engine-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="5" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Content &amp; ads</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">16</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Ad research and daily ads loop</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Study long-running ads in public ad libraries to find angles that last, turn them into your own briefs, and run a daily health check that flags ads to pause, refresh or scale, with you approving every budget change.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/ad-research-ads-loop.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/ad-research-ads-loop/SKILL.md" download="ad-research-ads-loop-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="5" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Content &amp; ads</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">17</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Copy and landing page stress test</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Put a landing page or ad through readability checks, three skeptical buyer personas, an objection gauntlet and a friction audit, then rewrite and repeat until it clears a set score.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/copy-landing-stress-test.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/copy-landing-stress-test/SKILL.md" download="copy-landing-stress-test-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="6" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Experiments</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">18</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Channel test cadence</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Test growth channels one at a time on a fixed cadence with a written hypothesis, a budget and a kill line, count your own hours as cost, and go deep on the one that pays. Includes creator tests and an honest review prompt for apps.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/channel-test-cadence.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/channel-test-cadence/SKILL.md" download="channel-test-cadence-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+            <article data-theme="6" style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                <span style="background: #F1F1EF; color: #4A4945; border-radius: 4px; padding: 1px 8px; font-size: 12px">Experiments</span>
+                <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #6F6E69">19</span>
+              </div>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Creative and thumbnail testing</h2>
+              <p style="margin: 0; font-size: 14px; color: #4A4945; flex: 1 1 auto">Generate many variants of a thumbnail, hook or ad, pretest them cheaply with small ad budgets or built-in platform tests, change one thing at a time, and only call a winner when the numbers are big enough.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="btn" href="/workflows/creative-thumbnail-testing.zip" download="" style="display: flex; align-items: center; gap: 6px; min-height: 40px; text-decoration: none; padding: 0 12px; border: 1px solid #D5D4D0; border-radius: 6px; background: #FFFFFF; color: #37352F; font-size: 13px; font-weight: 500; cursor: pointer"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11" /><path d="M7.5 11l4.5 4.5 4.5-4.5" /><path d="M5 20h14" /></svg><span>Download</span></a>
+                <a href="/workflows/creative-thumbnail-testing/SKILL.md" download="creative-thumbnail-testing-SKILL.md" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #4A4945; font-size: 13px; font-weight: 500">Skill file only</a>
+              </div>
+            </article>
+          
+        </div>
+        <section aria-label="Get new workflows" style="background: #F7F7F5; border-radius: 8px; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+          <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 4px">
+            <h2 style="margin: 0; font-size: 18px; font-weight: 600">Get the next one when it ships</h2>
+            <p style="margin: 0; font-size: 14px; color: #4A4945">I post new workflows on LinkedIn first.</p>
+          </div>
+          <a class="btn" href="https://www.linkedin.com/in/amit-vijay-sonawane/" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 6px; background: #0B6E99; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none">Follow on LinkedIn</a>
+        </section>
+      </div>
+    </section>
+
+    <section hidden data-page="about">
+      <div style="max-width: 820px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 36px">
+        <header style="display: flex; flex-direction: column; gap: 10px">
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Trajectory</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945">I planned to design aircraft. I ended up launching brands. The path between the two ran through six countries on four continents: India, Malaysia, the UK, the US, Chile and Portugal.</p>
+        </header>
+        <div style="display: flex; flex-direction: column">
+          
+            <div style="display: flex; gap: 20px">
+              <div style="flex: 0 0 64px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 2px">2006</div>
+              <div style="flex: 1 1 auto; min-width: 0; border-left: 2px solid #E9E9E7; padding: 0 0 28px 20px; display: flex; flex-direction: column; gap: 4px">
+                <h2 style="margin: 0; font-size: 17px; font-weight: 600">Aerospace engineering at Embry-Riddle</h2>
+                <p style="margin: 0; font-size: 15px; color: #4A4945">B.S. in Aerospace Engineering, then an MBA at the same school.</p>
+              </div>
+            </div>
+          
+            <div style="display: flex; gap: 20px">
+              <div style="flex: 0 0 64px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 2px">2011</div>
+              <div style="flex: 1 1 auto; min-width: 0; border-left: 2px solid #E9E9E7; padding: 0 0 28px 20px; display: flex; flex-direction: column; gap: 4px">
+                <h2 style="margin: 0; font-size: 17px; font-weight: 600">JetBlue, Orlando</h2>
+                <p style="margin: 0; font-size: 15px; color: #4A4945">Route optimization, structural engineering and four NTSB investigations. Where I learned to find root causes under pressure.</p>
+              </div>
+            </div>
+          
+            <div style="display: flex; gap: 20px">
+              <div style="flex: 0 0 64px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 2px">2013</div>
+              <div style="flex: 1 1 auto; min-width: 0; border-left: 2px solid #E9E9E7; padding: 0 0 28px 20px; display: flex; flex-direction: column; gap: 4px">
+                <h2 style="margin: 0; font-size: 17px; font-weight: 600">The switch to marketing</h2>
+                <p style="margin: 0; font-size: 15px; color: #4A4945">SEO at Grammarly, then email and SEO at TaxJar.</p>
+              </div>
+            </div>
+          
+            <div style="display: flex; gap: 20px">
+              <div style="flex: 0 0 64px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 2px">2016</div>
+              <div style="flex: 1 1 auto; min-width: 0; border-left: 2px solid #E9E9E7; padding: 0 0 28px 20px; display: flex; flex-direction: column; gap: 4px">
+                <h2 style="margin: 0; font-size: 17px; font-weight: 600">Scaling Hyperbiotics</h2>
+                <p style="margin: 0; font-size: 15px; color: #4A4945">Three years taking a probiotic brand from $25M to $150M and building the team that did it.</p>
+              </div>
+            </div>
+          
+            <div style="display: flex; gap: 20px">
+              <div style="flex: 0 0 64px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 2px">2020</div>
+              <div style="flex: 1 1 auto; min-width: 0; border-left: 2px solid #E9E9E7; padding: 0 0 28px 20px; display: flex; flex-direction: column; gap: 4px">
+                <h2 style="margin: 0; font-size: 17px; font-weight: 600">Founder</h2>
+                <p style="margin: 0; font-size: 15px; color: #4A4945">Co-founded and still help run the DTC e-commerce brand portfolio at The Jumbo Shop, a private equity firm.</p>
+              </div>
+            </div>
+          
+            <div style="display: flex; gap: 20px">
+              <div style="flex: 0 0 64px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 2px">2023</div>
+              <div style="flex: 1 1 auto; min-width: 0; border-left: 2px solid #E9E9E7; padding: 0 0 28px 20px; display: flex; flex-direction: column; gap: 4px">
+                <h2 style="margin: 0; font-size: 17px; font-weight: 600">Going international</h2>
+                <p style="margin: 0; font-size: 15px; color: #4A4945">Led Skylight into six markets, then built Checkbook.io marketing from zero.</p>
+              </div>
+            </div>
+          
+            <div style="display: flex; gap: 20px">
+              <div style="flex: 0 0 64px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #6F6E69; padding-top: 2px">Now</div>
+              <div style="flex: 1 1 auto; min-width: 0; border-left: 2px solid #E9E9E7; padding: 0 0 28px 20px; display: flex; flex-direction: column; gap: 4px">
+                <h2 style="margin: 0; font-size: 17px; font-weight: 600">Independent, and building</h2>
+                <p style="margin: 0; font-size: 15px; color: #4A4945">Consulting for growth-stage companies and shipping my own apps on the side.</p>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section hidden data-page="contact">
+      <div style="max-width: 920px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 32px">
+        <header style="display: flex; flex-direction: column; gap: 10px">
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Contact</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945">Three good reasons to write. Pick the one that fits.</p>
+        </header>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+          <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+            <h2 style="margin: 0; font-size: 17px; font-weight: 600">Hire me to consult</h2>
+            <p style="margin: 0; font-size: 14px; color: #4A4945">Project or long-term. Paid, SEO, lifecycle, international expansion, or building the function from zero.</p>
+          </div>
+          <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+            <h2 style="margin: 0; font-size: 17px; font-weight: 600">Bring me on full-time</h2>
+            <p style="margin: 0; font-size: 14px; color: #4A4945">Head of Growth or Marketing roles where I own the number and build the team.</p>
+          </div>
+          <div style="border: 1px solid #E9E9E7; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+            <h2 style="margin: 0; font-size: 17px; font-weight: 600">Just say hello</h2>
+            <p style="margin: 0; font-size: 14px; color: #4A4945">Founders, operators, fellow engineers turned marketers. I like comparing notes.</p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px">
+          <div><span style="color: #6F6E69; display: inline-block; min-width: 96px">Email</span> <a href="mailto:me@amitsonawane.com">me@amitsonawane.com</a></div>
+          <div><span style="color: #6F6E69; display: inline-block; min-width: 96px">LinkedIn</span> <a href="https://www.linkedin.com/in/amit-vijay-sonawane/">linkedin.com/in/amit-vijay-sonawane</a></div>
+        </div>
+      </div>
+    </section>
+      <section data-page="book" hidden>
+      <div style="max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 28px">
+        <header style="display: flex; flex-direction: column; gap: 10px">
+          <a href="#home" data-go="home" class="back">← Back</a>
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Free 30-minute growth audit</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945">Suggest a few times that work for you and tell me what to look at. I'll reply with a calendar invite for one of them.</p>
+        </header>
+        <form class="form" data-endpoint="/api/book" novalidate>
+          <div class="row2">
+            <div class="field"><label for="b-name">Your name</label><input id="b-name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+            <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+          </div>
+          <div class="field"><label for="b-company">Company or website <span class="opt">optional</span></label><input id="b-company" name="company" type="text" autocomplete="organization" maxlength="200"></div>
+          <div class="field"><label for="b-topic">What should we look at?</label><textarea id="b-topic" name="topic" rows="4" required maxlength="4000" placeholder="Your funnel, a channel that stalled, an ad account, a launch plan..."></textarea></div>
+          <fieldset class="slots">
+            <legend>Times that work for you</legend>
+            <p class="hint">Give one to three options. Times are in <strong class="tzlabel">your time zone</strong>.</p>
+            <div class="slot"><span class="slotn">1</span><div class="field"><label for="b-d1">Date</label><input id="b-d1" name="date1" type="date" required></div><div class="field"><label for="b-t1">Start time</label><input id="b-t1" name="time1" type="time" step="900" required></div></div>
+            <div class="slot"><span class="slotn">2</span><div class="field"><label for="b-d2">Date <span class="opt">optional</span></label><input id="b-d2" name="date2" type="date"></div><div class="field"><label for="b-t2">Start time</label><input id="b-t2" name="time2" type="time" step="900"></div></div>
+            <div class="slot"><span class="slotn">3</span><div class="field"><label for="b-d3">Date <span class="opt">optional</span></label><input id="b-d3" name="date3" type="date"></div><div class="field"><label for="b-t3">Start time</label><input id="b-t3" name="time3" type="time" step="900"></div></div>
+            <input type="hidden" name="tz" class="tzfield">
+          </fieldset>
+          <div class="hp" aria-hidden="true"><label for="b-site">Leave this empty</label><input id="b-site" name="website_url" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+          <p class="status" role="status" aria-live="polite"></p>
+          <button type="submit" class="submit">Send my times</button>
+        </form>
+      </div>
+    </section>
+
+    <section data-page="send" hidden>
+      <div style="max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 28px">
+        <header style="display: flex; flex-direction: column; gap: 10px">
+          <a href="#home" data-go="home" class="back">← Back</a>
+          <h1 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Send me the problem</h1>
+          <p style="margin: 0; font-size: 18px; color: #4A4945">No call needed. Describe what's going on, attach anything useful, and I'll reply with a written or recorded teardown.</p>
+        </header>
+        <form class="form" data-endpoint="/api/send" enctype="multipart/form-data" novalidate>
+          <div class="row2">
+            <div class="field"><label for="s-name">Your name</label><input id="s-name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+            <div class="field"><label for="s-email">Email</label><input id="s-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+          </div>
+          <div class="field"><label for="s-company">Company or website <span class="opt">optional</span></label><input id="s-company" name="company" type="text" autocomplete="organization" maxlength="200"></div>
+          <div class="field"><label for="s-problem">The problem</label><textarea id="s-problem" name="problem" rows="7" required maxlength="10000" placeholder="What you're trying to grow, what you've tried, the numbers you have, and where it's stuck."></textarea></div>
+          <div class="field"><label for="s-files">Files <span class="opt">optional, up to 10 files and 18 MB in total</span></label><input id="s-files" name="files" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.gif,.webp,.csv,.xlsx,.xls,.docx,.doc,.pptx,.txt,.md,.zip"><p class="hint filesum"></p></div>
+          <div class="hp" aria-hidden="true"><label for="s-site">Leave this empty</label><input id="s-site" name="website_url" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+          <p class="status" role="status" aria-live="polite"></p>
+          <button type="submit" class="submit">Send it over</button>
+        </form>
+      </div>
+    </section>
+</main>
+</div>
+
+<script>
+(function () {
+  var labels = { home: 'Home', work: 'Work and results', builds: 'Things I build', flows: 'Steal my workflows', about: 'Trajectory', contact: 'Contact', book: 'Free growth audit', send: 'Send me the problem' };
+  var titles = { home: 'Amit Sonawane · Growth', work: 'Work and results · Amit Sonawane', builds: 'Things I build · Amit Sonawane', flows: 'Steal my workflows · Amit Sonawane', about: 'Trajectory · Amit Sonawane', contact: 'Contact · Amit Sonawane', book: 'Free growth audit · Amit Sonawane', send: 'Send me the problem · Amit Sonawane' };
+  var pages = document.querySelectorAll('section[data-page]');
+  var crumb = document.querySelector('main > div:first-child span[style*="color: #37352F"]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- counting stats ----
+  var STATS = [{"a": 25, "b": 150, "kind": "money"}, {"a": 0.5, "b": 4, "kind": "money"}, {"a": 5.2, "b": 35, "kind": "money"}, {"a": 0.1, "b": 2, "kind": "m"}];
+  var raf = 0;
+  function fmt(s, v, done) {
+    if (s.kind === 'm') return (done ? '2' : v.toFixed(1)) + 'M';
+    return '$' + (done || v >= 10 ? Math.round(v) : v.toFixed(1)) + 'M';
+  }
+  function setStats(p) {
+    STATS.forEach(function (s, i) {
+      var v = s.a + (s.b - s.a) * p;
+      var el = document.querySelector('[data-stat="' + i + '"]');
+      var bar = document.querySelector('[data-bar="' + i + '"]');
+      if (el) el.textContent = fmt(s, v, p >= 1);
+      if (bar) bar.style.width = (v / s.b * 100).toFixed(1) + '%';
+    });
+  }
+  function runStats() {
+    cancelAnimationFrame(raf);
+    if (reduce) { setStats(1); return; }
+    var t0 = performance.now();
+    setStats(0);
+    var step = function (t) {
+      var x = Math.min(1, (t - t0) / 1800);
+      setStats(1 - Math.pow(1 - x, 3));
+      if (x < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+  }
+
+  // ---- routing ----
+  function show(id, scroll) {
+    if (!labels[id]) id = 'home';
+    pages.forEach(function (sec) { sec.hidden = sec.getAttribute('data-page') !== id; });
+    document.querySelectorAll('button.nv[data-go]').forEach(function (b) {
+      if (b.getAttribute('data-go') === id) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+    });
+    if (crumb) crumb.textContent = labels[id];
+    document.title = titles[id];
+    if (id === 'home') runStats();
+    if (scroll !== false) window.scrollTo(0, 0);
+  }
+  function route() { show((location.hash || '#home').slice(1)); }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-go]');
+    if (t) {
+      e.preventDefault();
+      var id = t.getAttribute('data-go');
+      if (location.hash === '#' + id) show(id); else location.hash = id;
+      return;
+    }
+    var r = e.target.closest('[data-action="replay"]');
+    if (r) runStats();
+    var f = e.target.closest('[data-filter]');
+    if (f) {
+      var n = +f.getAttribute('data-filter');
+      document.querySelectorAll('[data-filter]').forEach(function (c) {
+        var on = c === f;
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+        c.style.background = on ? '#37352F' : '#FFFFFF';
+        c.style.color = on ? '#FFFFFF' : '#37352F';
+        c.style.borderColor = on ? '#37352F' : '#D5D4D0';
+      });
+      document.querySelectorAll('article[data-theme]').forEach(function (a) {
+        a.hidden = n !== 0 && +a.getAttribute('data-theme') !== n;
+      });
+    }
+  });
+  window.addEventListener('hashchange', route);
+  route();
+
+  // ---- forms ----
+  var tz = '';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  document.querySelectorAll('.tzfield').forEach(function (i) { i.value = tz; });
+  document.querySelectorAll('.tzlabel').forEach(function (s) { if (tz) s.textContent = tz.replace(/_/g, ' '); });
+  var today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  document.querySelectorAll('input[type=date]').forEach(function (i) { i.min = today.toISOString().slice(0, 10); });
+
+  var MAX_FILES = 10, MAX_BYTES = 18 * 1024 * 1024;
+  var fileInput = document.getElementById('s-files');
+  if (fileInput) fileInput.addEventListener('change', function () {
+    var total = 0; for (var i = 0; i < fileInput.files.length; i++) total += fileInput.files[i].size;
+    var sum = fileInput.parentNode.querySelector('.filesum');
+    sum.textContent = fileInput.files.length ? fileInput.files.length + ' file' + (fileInput.files.length > 1 ? 's' : '') + ', ' + (total / 1048576).toFixed(1) + ' MB' : '';
+  });
+
+  function validate(form) {
+    var bad = null;
+    form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+    form.querySelectorAll('input[required], textarea[required]').forEach(function (el) {
+      var v = el.value.trim();
+      var ok = v.length > 0 && (el.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+      if (!ok) { el.setAttribute('aria-invalid', 'true'); bad = bad || el; }
+    });
+    if (bad) return { el: bad, msg: bad.type === 'email' && bad.value ? 'Please check your email address.' : 'Please fill in the highlighted fields.' };
+    for (var k = 2; k <= 3; k++) {
+      var d = form.querySelector('[name=date' + k + ']'), t = form.querySelector('[name=time' + k + ']');
+      if (d && t && (!!d.value !== !!t.value)) { (d.value ? t : d).setAttribute('aria-invalid', 'true'); return { el: d.value ? t : d, msg: 'Option ' + k + ' needs both a date and a time.' }; }
+    }
+    var files = form.querySelector('input[type=file]');
+    if (files && files.files.length) {
+      if (files.files.length > MAX_FILES) return { el: files, msg: 'Please attach up to ' + MAX_FILES + ' files.' };
+      var total = 0; for (var i = 0; i < files.files.length; i++) total += files.files[i].size;
+      if (total > MAX_BYTES) return { el: files, msg: 'Those files add up to more than 18 MB. Please send fewer or smaller files, or share a link in the description.' };
+    }
+    return null;
+  }
+
+  document.querySelectorAll('form.form').forEach(function (form) {
+    var status = form.querySelector('.status');
+    var btn = form.querySelector('.submit');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.className = 'status'; status.textContent = '';
+      var problem = validate(form);
+      if (problem) { status.className = 'status err'; status.textContent = problem.msg; problem.el.focus(); return; }
+      var data = new FormData(form);
+      if (!data.get('cf-turnstile-response')) { status.className = 'status err'; status.textContent = 'Please wait a moment for the spam check to finish, then send again.'; return; }
+      btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending...';
+      fetch(form.getAttribute('data-endpoint'), { method: 'POST', body: data })
+        .then(function (r) { return r.json().catch(function () { return { ok: false, error: 'Something went wrong. Please email me@amitsonawane.com instead.' }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            var done = document.createElement('div');
+            done.className = 'done'; done.setAttribute('tabindex', '-1');
+            done.innerHTML = '<h2>Got it, thank you.</h2><p></p>';
+            done.querySelector('p').textContent = form.getAttribute('data-endpoint') === '/api/book'
+              ? 'I will reply to ' + data.get('email') + ' with a calendar invite for one of your times, usually within a working day.'
+              : 'I will read it properly and reply to ' + data.get('email') + '.';
+            form.replaceWith(done); done.focus();
+          } else {
+            status.className = 'status err'; status.textContent = res.error || 'Something went wrong. Please try again.';
+            if (window.turnstile) try { turnstile.reset(form.querySelector('.cf-turnstile')); } catch (e) {}
+          }
+        })
+        .catch(function () { status.className = 'status err'; status.textContent = 'Could not reach the server. Check your connection and try again.'; })
+        .then(function () { btn.disabled = false; btn.textContent = label; });
+    });
+  });
+})();
+</script>
+</body>
+</html>

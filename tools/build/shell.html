@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amit Sonawane · Growth</title>
+<meta name="description" content="Amit Sonawane grows companies. Aerospace engineer by training, marketer by trade, and still writing the code when a marketing problem needs it.">
+<meta property="og:title" content="Amit Sonawane · Growth">
+<meta property="og:description" content="Ten years growing companies like Hyperbiotics, Skylight and Feedzai. Free growth workflows, case notes and a free 30-minute audit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amitsonawane.com/">
+<meta name="theme-color" content="#F7F7F5">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--HEAD-->
+<style>
+html{scroll-behavior:smooth}
+section[data-page][hidden]{display:none}
+button.nv{background:transparent}
+@media (max-width:700px){
+  nav[aria-label="Site"]{flex:1 1 100% !important;flex-direction:row !important;align-items:center;gap:6px !important;padding:8px 10px !important;border-right:0 !important;border-bottom:1px solid #E9E9E7;overflow-x:auto;position:sticky;top:0;z-index:5}
+  nav[aria-label="Site"] > div:first-child{flex:0 0 auto;padding:4px !important}
+  nav[aria-label="Site"] > div:first-child > div:last-child{display:none}
+  nav[aria-label="Site"] > div:nth-child(2){flex-direction:row !important;gap:2px !important}
+  nav[aria-label="Site"] > div:nth-child(2) > div:first-child{display:none}
+  button.nv{white-space:nowrap;flex:0 0 auto}
+  button.nv svg{display:none}
+  .msl{width:24% !important}
+  .msl.m2,.msl.m4,.msl.m6{display:none !important}
+  .msl.m7{left:auto !important;right:10px;text-align:right;align-items:flex-end}
+  .bannerhead{font-size:20px !important}
+}
+button.nv[aria-current="page"]{background:#E8E8E5 !important}
+a.btn:hover{filter:brightness(.95)}
+.back{font-size:14px;color:#6F6E69;text-decoration:none;align-self:flex-start}
+.back:hover{color:#37352F}
+.form{display:flex;flex-direction:column;gap:18px}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label,.slots legend{font-size:14px;font-weight:500;color:#37352F}
+.opt{font-weight:400;color:#6F6E69;font-size:13px}
+.form input[type=text],.form input[type=email],.form input[type=date],.form input[type=time],.form textarea{box-sizing:border-box;width:100%;min-height:44px;padding:10px 12px;border:1px solid #D5D4D0;border-radius:6px;background:#FFFFFF;font:inherit;font-size:15px;color:#37352F}
+.form textarea{resize:vertical;line-height:1.5}
+.form input:focus,.form textarea:focus{outline:2px solid #0B6E99;outline-offset:1px;border-color:#0B6E99}
+.form input[type=file]{font:inherit;font-size:14px;padding:10px;border:1px dashed #C9C8C3;border-radius:6px;background:#F7F7F5}
+.form [aria-invalid="true"]{border-color:#B42318 !important}
+.slots{border:1px solid #E9E9E7;border-radius:8px;padding:16px 18px 18px;margin:0;display:flex;flex-direction:column;gap:12px}
+.slots legend{padding:0 6px}
+.hint{margin:0;font-size:13px;color:#6F6E69}
+.slot{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:end}
+.slotn{width:28px;height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;color:#6F6E69}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.status{margin:0;font-size:14px;min-height:1.4em}
+.status.err{color:#B42318}
+.status.ok{color:#1E6B3C}
+.submit{align-self:flex-start;min-height:46px;padding:0 20px;border:0;border-radius:6px;background:#0B6E99;color:#FFFFFF;font-size:15px;font-weight:600;cursor:pointer}
+.submit[disabled]{opacity:.6;cursor:progress}
+.done{border:1px solid #E9E9E7;border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.done h2{margin:0;font-size:20px}
+.done p{margin:0;color:#4A4945}
+@media (max-width:520px){.slot{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.slotn{display:none}}
+</style>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+<!--BODY-->
+<script>
+(function () {
+  var labels = { home: 'Home', work: 'Work and results', builds: 'Things I build', flows: 'Steal my workflows', about: 'Trajectory', contact: 'Contact', book: 'Free growth audit', send: 'Send me the problem' };
+  var titles = { home: 'Amit Sonawane · Growth', work: 'Work and results · Amit Sonawane', builds: 'Things I build · Amit Sonawane', flows: 'Steal my workflows · Amit Sonawane', about: 'Trajectory · Amit Sonawane', contact: 'Contact · Amit Sonawane', book: 'Free growth audit · Amit Sonawane', send: 'Send me the problem · Amit Sonawane' };
+  var pages = document.querySelectorAll('section[data-page]');
+  var crumb = document.querySelector('main > div:first-child span[style*="color: #37352F"]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- counting stats ----
+  var STATS = /*STATS*/;
+  var raf = 0;
+  function fmt(s, v, done) {
+    if (s.kind === 'm') return (done ? '2' : v.toFixed(1)) + 'M';
+    return '$' + (done || v >= 10 ? Math.round(v) : v.toFixed(1)) + 'M';
+  }
+  function setStats(p) {
+    STATS.forEach(function (s, i) {
+      var v = s.a + (s.b - s.a) * p;
+      var el = document.querySelector('[data-stat="' + i + '"]');
+      var bar = document.querySelector('[data-bar="' + i + '"]');
+      if (el) el.textContent = fmt(s, v, p >= 1);
+      if (bar) bar.style.width = (v / s.b * 100).toFixed(1) + '%';
+    });
+  }
+  function runStats() {
+    cancelAnimationFrame(raf);
+    if (reduce) { setStats(1); return; }
+    var t0 = performance.now();
+    setStats(0);
+    var step = function (t) {
+      var x = Math.min(1, (t - t0) / 1800);
+      setStats(1 - Math.pow(1 - x, 3));
+      if (x < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+  }
+
+  // ---- routing ----
+  function show(id, scroll) {
+    if (!labels[id]) id = 'home';
+    pages.forEach(function (sec) { sec.hidden = sec.getAttribute('data-page') !== id; });
+    document.querySelectorAll('button.nv[data-go]').forEach(function (b) {
+      if (b.getAttribute('data-go') === id) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+    });
+    if (crumb) crumb.textContent = labels[id];
+    document.title = titles[id];
+    if (id === 'home') runStats();
+    if (scroll !== false) window.scrollTo(0, 0);
+  }
+  function route() { show((location.hash || '#home').slice(1)); }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-go]');
+    if (t) {
+      e.preventDefault();
+      var id = t.getAttribute('data-go');
+      if (location.hash === '#' + id) show(id); else location.hash = id;
+      return;
+    }
+    var r = e.target.closest('[data-action="replay"]');
+    if (r) runStats();
+    var f = e.target.closest('[data-filter]');
+    if (f) {
+      var n = +f.getAttribute('data-filter');
+      document.querySelectorAll('[data-filter]').forEach(function (c) {
+        var on = c === f;
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+        c.style.background = on ? '#37352F' : '#FFFFFF';
+        c.style.color = on ? '#FFFFFF' : '#37352F';
+        c.style.borderColor = on ? '#37352F' : '#D5D4D0';
+      });
+      document.querySelectorAll('article[data-theme]').forEach(function (a) {
+        a.hidden = n !== 0 && +a.getAttribute('data-theme') !== n;
+      });
+    }
+  });
+  window.addEventListener('hashchange', route);
+  route();
+
+  // ---- forms ----
+  var tz = '';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  document.querySelectorAll('.tzfield').forEach(function (i) { i.value = tz; });
+  document.querySelectorAll('.tzlabel').forEach(function (s) { if (tz) s.textContent = tz.replace(/_/g, ' '); });
+  var today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  document.querySelectorAll('input[type=date]').forEach(function (i) { i.min = today.toISOString().slice(0, 10); });
+
+  var MAX_FILES = 10, MAX_BYTES = 18 * 1024 * 1024;
+  var fileInput = document.getElementById('s-files');
+  if (fileInput) fileInput.addEventListener('change', function () {
+    var total = 0; for (var i = 0; i < fileInput.files.length; i++) total += fileInput.files[i].size;
+    var sum = fileInput.parentNode.querySelector('.filesum');
+    sum.textContent = fileInput.files.length ? fileInput.files.length + ' file' + (fileInput.files.length > 1 ? 's' : '') + ', ' + (total / 1048576).toFixed(1) + ' MB' : '';
+  });
+
+  function validate(form) {
+    var bad = null;
+    form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+    form.querySelectorAll('input[required], textarea[required]').forEach(function (el) {
+      var v = el.value.trim();
+      var ok = v.length > 0 && (el.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+      if (!ok) { el.setAttribute('aria-invalid', 'true'); bad = bad || el; }
+    });
+    if (bad) return { el: bad, msg: bad.type === 'email' && bad.value ? 'Please check your email address.' : 'Please fill in the highlighted fields.' };
+    for (var k = 2; k <= 3; k++) {
+      var d = form.querySelector('[name=date' + k + ']'), t = form.querySelector('[name=time' + k + ']');
+      if (d && t && (!!d.value !== !!t.value)) { (d.value ? t : d).setAttribute('aria-invalid', 'true'); return { el: d.value ? t : d, msg: 'Option ' + k + ' needs both a date and a time.' }; }
+    }
+    var files = form.querySelector('input[type=file]');
+    if (files && files.files.length) {
+      if (files.files.length > MAX_FILES) return { el: files, msg: 'Please attach up to ' + MAX_FILES + ' files.' };
+      var total = 0; for (var i = 0; i < files.files.length; i++) total += files.files[i].size;
+      if (total > MAX_BYTES) return { el: files, msg: 'Those files add up to more than 18 MB. Please send fewer or smaller files, or share a link in the description.' };
+    }
+    return null;
+  }
+
+  document.querySelectorAll('form.form').forEach(function (form) {
+    var status = form.querySelector('.status');
+    var btn = form.querySelector('.submit');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.className = 'status'; status.textContent = '';
+      var problem = validate(form);
+      if (problem) { status.className = 'status err'; status.textContent = problem.msg; problem.el.focus(); return; }
+      var data = new FormData(form);
+      if (!data.get('cf-turnstile-response')) { status.className = 'status err'; status.textContent = 'Please wait a moment for the spam check to finish, then send again.'; return; }
+      btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending...';
+      fetch(form.getAttribute('data-endpoint'), { method: 'POST', body: data })
+        .then(function (r) { return r.json().catch(function () { return { ok: false, error: 'Something went wrong. Please email me@amitsonawane.com instead.' }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            var done = document.createElement('div');
+            done.className = 'done'; done.setAttribute('tabindex', '-1');
+            done.innerHTML = '<h2>Got it, thank you.</h2><p></p>';
+            done.querySelector('p').textContent = form.getAttribute('data-endpoint') === '/api/book'
+              ? 'I will reply to ' + data.get('email') + ' with a calendar invite for one of your times, usually within a working day.'
+              : 'I will read it properly and reply to ' + data.get('email') + '.';
+            form.replaceWith(done); done.focus();
+          } else {
+            status.className = 'status err'; status.textContent = res.error || 'Something went wrong. Please try again.';
+            if (window.turnstile) try { turnstile.reset(form.querySelector('.cf-turnstile')); } catch (e) {}
+          }
+        })
+        .catch(function () { status.className = 'status err'; status.textContent = 'Could not reach the server. Check your connection and try again.'; })
+        .then(function () { btn.disabled = false; btn.textContent = label; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
