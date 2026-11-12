@@ -52,7 +52,7 @@ async function handleForm(path, request, env) {
   if (!outcome.success) {
     const codes = (outcome['error-codes'] || []).join(', ') || 'unknown';
     console.error('turnstile failed', codes, outcome.hostname || '');
-    return json({ ok: false, error: `The spam check failed (${codes}). Please refresh the page and try again.` }, 403);
+    return json({ ok: false, error: "The spam check failed. Please refresh the page and try again." }, 403);
   }
 
   const name = str(form, 'name', 120);
